@@ -40,3 +40,6 @@ EPICS_BASE = /home/pi/epics/base-7.0.7
 -include $(TOP)/../RELEASE.local
 -include $(TOP)/../RELEASE.$(EPICS_HOST_ARCH).local
 -include $(TOP)/configure/RELEASE.local
+ASYN=/usr/local/epics/modules/asyn
+STREAM=/usr/local/epics/modules/stream
+MODBUS=/usr/local/epics/modules/modbus

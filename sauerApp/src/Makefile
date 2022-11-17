@@ -17,9 +17,14 @@ sauer_DBD += base.dbd
 
 # Include dbd files from all support applications:
 #sauer_DBD += xxx.dbd
+sauer_DBD += asyn.dbd
+sauer_DBD += modbusApp.dbd
+sauer_DBD += modbusSupport.dbd
 
 # Add all the support libraries needed by this IOC
 #sauer_LIBS += xxx
+sauer_LIBS += modbus
+sauer_LIBS += asyn
 
 # sauer_registerRecordDeviceDriver.cpp derives from sauer.dbd
 sauer_SRCS += sauer_registerRecordDeviceDriver.cpp
