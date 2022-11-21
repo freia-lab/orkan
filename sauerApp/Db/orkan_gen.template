@@ -138,5 +138,19 @@ record (longout, "$(P)$(D)TEST_W-cData") {
 
 #PARAMETER
 
+# Alarm related PVs
+record(calc, "$(P)$(D)sAlarm-raw") {
+    field(SCAN, "10 second")
+    field(INPA, "Cryo-Rec:LP:GSH7225")
+    field(INPB, "$(P)$(D)GlobStat")
+    field(CALC, "A=1?(B#9):0")
+    field(FLNK, "$(P)$(D)sAlarm")
+}
 
+record(bi, "$(P)$(D)sAlarm") {
+    field(INP, "$(P)$(D)sAlarm-raw")
+    field(ZNAM, "OK")
+    field(ONAM, "Fault")
+    field(OSV, "MAJOR")
+}
 
