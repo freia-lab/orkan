@@ -8,36 +8,36 @@ include $(TOP)/configure/CONFIG
 #=============================
 # Build the IOC application
 
-PROD_IOC = sauer
-# sauer.dbd will be created and installed
-DBD += sauer.dbd
+PROD_IOC = orkan
+# orkan.dbd will be created and installed
+DBD += orkan.dbd
 
-# sauer.dbd will be made up from these files:
-sauer_DBD += base.dbd
+# orkan.dbd will be made up from these files:
+orkan_DBD += base.dbd
 
 # Include dbd files from all support applications:
-#sauer_DBD += xxx.dbd
-sauer_DBD += asyn.dbd
-sauer_DBD += modbusApp.dbd
-sauer_DBD += modbusSupport.dbd
+#orkan_DBD += xxx.dbd
+orkan_DBD += asyn.dbd
+orkan_DBD += modbusApp.dbd
+orkan_DBD += modbusSupport.dbd
 
 # Add all the support libraries needed by this IOC
-#sauer_LIBS += xxx
-sauer_LIBS += modbus
-sauer_LIBS += asyn
+#orkan_LIBS += xxx
+orkan_LIBS += modbus
+orkan_LIBS += asyn
 
-# sauer_registerRecordDeviceDriver.cpp derives from sauer.dbd
-sauer_SRCS += sauer_registerRecordDeviceDriver.cpp
+# orkan_registerRecordDeviceDriver.cpp derives from orkan.dbd
+orkan_SRCS += orkan_registerRecordDeviceDriver.cpp
 
 # Build the main IOC entry point on workstation OSs.
-sauer_SRCS_DEFAULT += sauerMain.cpp
-sauer_SRCS_vxWorks += -nil-
+orkan_SRCS_DEFAULT += orkanMain.cpp
+orkan_SRCS_vxWorks += -nil-
 
 # Add support from base/src/vxWorks if needed
-#sauer_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
+#orkan_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 # Finally link to the EPICS Base libraries
-sauer_LIBS += $(EPICS_BASE_IOC_LIBS)
+orkan_LIBS += $(EPICS_BASE_IOC_LIBS)
 
 #===========================
 

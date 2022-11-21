@@ -1,6 +1,6 @@
-#!../../bin/linux-arm/sauer
+#!../../bin/linux-arm/orkan
 
-#- You may have to change sauer to something else
+#- You may have to change orkan to something else
 #- everywhere it appears in this file
 
 < envPaths
@@ -17,8 +17,8 @@ epicsEnvSet("IOCNAME","ioc01-orkan")
 cd "${TOP}"
 
 ## Register all support components
-dbLoadDatabase "dbd/sauer.dbd"
-sauer_registerRecordDeviceDriver pdbbase
+dbLoadDatabase "dbd/orkan.dbd"
+orkan_registerRecordDeviceDriver pdbbase
 
 drvAsynSerialPortConfigure("$(ASYN_PORT_NAME)","$(SERIAL_PORT)",0,0,0)
 asynSetOption("$(ASYN_PORT_NAME)",0,"baud", $(BAUD=9600))
