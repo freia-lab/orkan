@@ -11,8 +11,10 @@ epicsEnvSet("SERIAL_PORT","/dev/ttyUSB0")
 epicsEnvSet("PREFIX","Cryo-Rec:LP:")
 epicsEnvSet("DEV_NAME","C4:")
 epicsEnvSet("IOCNAME","ioc01-orkan")
-
-
+epicsEnvSet("LOCATION","Sauer Compressor Container")
+epicsEnvSet("STARTUP","/home/pi/epics/ioc/orkan/iocBoot/iocorkan")
+epicsEnvSet("ST_CMD","st.cmd")
+epicsEnvSet("ENGINEER","pi")
 
 cd "${TOP}"
 
@@ -58,10 +60,14 @@ drvModbusAsynConfigure(WR_2R, "$(ASYN_PORT_NAME)", 2, 6, -1, 2, "INT32_BE", 0, "
 
 #drvModbusAsynConfigure(MOTOR, "$(ASYN_PORT_NAME)", 2, 3, 0x1800, 24, "UINT16", 4000, "orkan")
 
+var(reccastTimeout, 5.0)
+var(reccastMaxHoldoff, 5.0)
 
 ## Load record instances
 dbLoadRecords("db/orkan.db","PORT_RD_2R=RD_2R,PORT_RD_1R=RD_1R,PORT_WR_1R=WR_1R,PORT_WR_2R=WR_2R,P=$(PREFIX),D=$(DEV_NAME)")
 dbLoadRecords("$(ASYN)/db/asynRecord.db","P=$(IOCNAME),R=:asynRec,PORT='$(ASYN_PORT_NAME)',ADDR='0',IMAX='1024',OMAX='256'")
+dbLoadRecords("$(RECSYNC)/db/reccaster.db","P=$(IOCNAME):RecSync-")
+dbLoadRecords("db/iocAdminSoft-ess.db","IOC=$(IOCNAME)")
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit

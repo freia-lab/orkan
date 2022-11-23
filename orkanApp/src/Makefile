@@ -20,11 +20,16 @@ orkan_DBD += base.dbd
 orkan_DBD += asyn.dbd
 orkan_DBD += modbusApp.dbd
 orkan_DBD += modbusSupport.dbd
+orkan_DBD += reccaster.dbd
+orkan_DBD += iocAdmin.dbd
+orkan_DBD += devIocStats.dbd
 
 # Add all the support libraries needed by this IOC
 #orkan_LIBS += xxx
 orkan_LIBS += modbus
 orkan_LIBS += asyn
+orkan_LIBS += reccaster
+orkan_LIBS += devIocStats
 
 # orkan_registerRecordDeviceDriver.cpp derives from orkan.dbd
 orkan_SRCS += orkan_registerRecordDeviceDriver.cpp
