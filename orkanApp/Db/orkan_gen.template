@@ -55,6 +55,11 @@ record (longin, "$(P)$(D)sOpMode") {
     field(SCAN,"10 second")
 }
 
+record (longout, "$(P)$(D)cOpMode") {
+    field(DTYP,"asynInt32")
+    field(OUT,"@asynMask($(PORT_WR_1R) 0x2400 0xFF 500)UINT16")
+}
+
 record (longin, "$(P)$(D)sRemStart") {
     field(DTYP,"asynUInt32Digital")
     field(INP,"@asynMask($(PORT_RD_1R) 0x2401 0xFF 1500)UINT16")
@@ -65,11 +70,35 @@ record (longout, "$(P)$(D)cRemStart") {
     field(DTYP,"asynInt32")
     field(OUT,"@asynMask($(PORT_WR_1R) 0x2401 0xFF 500)UINT16")
 }
+record (longout, "$(P)$(D)cStartByPilot") {
+    field(DTYP,"asynInt32")
+    field(OUT,"@asynMask($(PORT_WR_1R) 0x2402 0xFF 500)UINT16")
+}
 
 record (longin, "$(P)$(D)sStartByPilot") {
     field(DTYP,"asynUInt32Digital")
     field(INP,"@asynMask($(PORT_RD_1R) 0x2402 0xFF 1500)UINT16")
     field(SCAN,"10 second")
+}
+
+record (longin, "$(P)$(D)sStart") {
+    field(DTYP,"asynUInt32Digital")
+    field(INP,"@asynMask($(PORT_RD_1R) 0x2206 0xFFFF 1500)UINT16")
+    field(SCAN,"10 second")
+}
+record (longout, "$(P)$(D)cStart") {
+    field(DTYP,"asynInt32")
+    field(OUT,"@asynMask($(PORT_WR_1R) 0x2206 500)UINT16")
+}
+
+record (longin, "$(P)$(D)sStop") {
+    field(DTYP,"asynUInt32Digital")
+    field(INP,"@asynMask($(PORT_RD_1R) 0x2208 0xFFFF 1500)UINT16")
+    field(SCAN,"10 second")
+}
+record (longout, "$(P)$(D)cStop") {
+    field(DTYP,"asynInt32")
+    field(OUT,"@asynMask($(PORT_WR_1R) 0x2208 500)UINT16")
 }
 
 # RS485 Port settings
@@ -133,7 +162,7 @@ record (longin, "$(P)$(D)TEST_W-sData") {
 }
 record (longout, "$(P)$(D)TEST_W-cData") {
     field(DTYP,"asynInt32")
-    field(OUT,"@asynMask($(PORT_WR_1R) 0x246E 600)UINT16")
+    field(OUT,"@asynMask($(PORT_WR_2R) 0x246E 600)UINT16")
 }
 
 #PARAMETER
