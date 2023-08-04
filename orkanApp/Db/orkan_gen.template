@@ -83,7 +83,7 @@ record (longin, "$(P)$(D)sStartByPilot") {
 
 record (longin, "$(P)$(D)sStart") {
     field(DTYP,"asynUInt32Digital")
-    field(INP,"@asynMask($(PORT_RD_1R) 0x2206 0xFFFF 1500)UINT16")
+    field(INP,"@asynMask($(PORT_RD_2R) 0x2206 0xFFFF 1500)UINT16")
 #    field(SCAN,"10 second")
 }
 record (longout, "$(P)$(D)cStart") {
@@ -93,7 +93,7 @@ record (longout, "$(P)$(D)cStart") {
 
 record (longin, "$(P)$(D)sStop") {
     field(DTYP,"asynUInt32Digital")
-    field(INP,"@asynMask($(PORT_RD_1R) 0x2208 0xFFFF 1500)UINT16")
+    field(INP,"@asynMask($(PORT_RD_2R) 0x2208 0xFFFF 1500)UINT16")
 #    field(SCAN,"10 second")
 }
 record (longout, "$(P)$(D)cStop") {

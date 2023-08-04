@@ -33,7 +33,7 @@ asynSetOption("$(ASYN_PORT_NAME)",0,"stop", "1")
 #                      timeoutMsec,
 #                      writeDelayMsec)
 
-modbusInterposeConfig("$(ASYN_PORT_NAME)",1,500,100)
+modbusInterposeConfig("$(ASYN_PORT_NAME)",1,5000,100)
 
 #drvModbusAsynConfigure	 'Port name'
 #			 'Octet port name' 
@@ -50,7 +50,7 @@ drvModbusAsynConfigure(RD_1R, "$(ASYN_PORT_NAME)", 2, 3, -1, 1, "UINT16", 4000, 
 drvModbusAsynConfigure(RD_2R, "$(ASYN_PORT_NAME)", 2, 3, -1, 2, "UINT16", 4000, "orkan")
 
 drvModbusAsynConfigure(WR_1R, "$(ASYN_PORT_NAME)", 2, 6, -1, 1, "UINT16", 1, "orkan")
-drvModbusAsynConfigure(WR_2R, "$(ASYN_PORT_NAME)", 2, 6, -1, 2, "INT32_BE", 0, "orkan")
+drvModbusAsynConfigure(WR_2R, "$(ASYN_PORT_NAME)", 2, 16, -1, 2, "INT32_BE", 1, "orkan")
 
 #drvModbusAsynConfigure(PRESSURE, "$(ASYN_PORT_NAME)", 2, 3, 0x1028, 104, "UINT16", 4000, "orkan")
 
