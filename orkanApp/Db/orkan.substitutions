@@ -3,28 +3,28 @@ file "orkan_gen.template" { pattern {}
 }
 
 file "orkan-ai.template" { pattern
-{S   	           EGU     ADDR	    ASLO    PORT		SCAN	   DESC}
-{PT002		   atm	   0x1000   0.01   "$(PORT_RD_2R)"     "5 second" "Feed pressure"}
-{PT003		   atm	   0x1012   0.01   "$(PORT_RD_2R)"     "5 second" "Suction pressure"}
-{PT110		   atm	   0x1028   0.01   "$(PORT_RD_2R)"     "5 second" "Stage 1 pressure"}
-{PT210		   atm	   0x1036   0.01   "$(PORT_RD_2R)"     "5 second" "Stage 2 pressure"}
-{PT310		   atm	   0x1044   0.01   "$(PORT_RD_2R)"     "5 second" "Stage 3 pressure"}
-{PT410		   atm	   0x1052   0.01   "$(PORT_RD_2R)"     "5 second" "Stage 4 pressure"}
-{PT510		   atm	   0x1060   0.01   "$(PORT_RD_2R)"     "5 second" "Stage 5 pressure"}
-{PT709		   atm	   0x107C   0.01   "$(PORT_RD_2R)"     "5 second" "System pressure"}
-{PT800		   atm	   0x10D2   0.01   "$(PORT_RD_2R)"     "5 second" "Oil pressure"}
-{TT519		   "°C"	   0x1400   0.01   "$(PORT_RD_2R)"     "5 second" "Outlet temperature"}
-{TT111		   "°C"	   0x14B4   0.01   "$(PORT_RD_2R)"     "5 second" "Temp. b4 stage1 cooler"}
-{TT211		   "°C"	   0x14FA   0.01   "$(PORT_RD_2R)"     "5 second" "Temp. b4 stage2 cooler"}
-{TT311		   "°C"	   0x1524   0.01   "$(PORT_RD_2R)"     "5 second" "Temp. b4 stage3 cooler"}
-{TT411		   "°C"	   0x1540   0.01   "$(PORT_RD_2R)"     "5 second" "Temp. b4 stage4 cooler"}
-{TT511		   "°C"	   0x154E   0.01   "$(PORT_RD_2R)"     "5 second" "Temp. b4 stage5 cooler"}
-{TT511		   "°C"	   0x154E   0.01   "$(PORT_RD_2R)"     "5 second" "Temp. b4 stage5 cooler"}
-{MTR-I	   	   "A"	   0x1800   0.01   "$(PORT_RD_2R)"     "5 second" "Motor Current"}
-{MTR-Freq	   "Hz"	   0x1814   0.01   "$(PORT_RD_2R)"     "5 second" "Motor frequency"}
-{MTR-OilLvl	   "?"	   0x1823   0.01   "$(PORT_RD_2R)"     "5 second" "Motor oil level"}
-{TT001-ErrLvl      ""      0x10f8   0.01   "$(PORT_RD_1R)"     "10 second" "Error level"}
-{MaintTime	   "h"	   0x27D3   1.0    "$(PORT_RD_2R)"     "10 second" "Next maintenance @"}
-{sOpTime           "h"     0x2621   1.0    "$(PORT_RD_2R)"     "10 second" "Operation time"}
+{S   	           EGU     ADDR	    ASLO    PORT	     MODBUS_DATA	NBITS	   DESC}
+{PT002		   atm	   0x0002   0.01   "$(PORT_RD_1000)" INT32_BE   "32"       "Feed pressure"}
+{PT003		   atm	   0x0004   0.01   "$(PORT_RD_1000)" INT32_BE   "32"       "Suction pressure"}
+{PT709		   atm	   0x0006   0.01   "$(PORT_RD_1000)" UINT16     "16"       "System pressure"}
+{PT110		   atm	   0x0007   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 1 pressure"}
+{PT210		   atm	   0x0008   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 2 pressure"}
+{PT310		   atm	   0x0009   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 3 pressure"}
+{PT410		   atm	   0x000A   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 4 pressure"}
+{PT510		   atm	   0x000B   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 5 pressure"}
+{PT800		   atm	   0x000D   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Oil pressure"}
+{MTR-I		   "A"	   0x0015   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Motor current"}
+{TT519		   "°C"	   0x0001   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Outlet temperature"}
+{MTR-OilT	   "°C"	   0x0002   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Motor oil temperature"}
+{TT111		   "°C"	   0x000A   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Temp. b4 stage1 cooler"}
+{TT211		   "°C"	   0x0014   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Temp. b4 stage2 cooler"}
+{TT311		   "°C"	   0x001A   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Temp. b4 stage3 cooler"}
+{TT411		   "°C"	   0x001E   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Temp. b4 stage4 cooler"}
+{TT511		   "°C"	   0x0020   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Temp. b4 stage5 cooler"}
+#{MTR-Freq	   "Hz"	   0x0000   0.01   "$(PORT_RD_508E)" UINT16     "16"       "Motor frequency"}
+#{MTR-OilLvl	   "?"	   0x1823   0.01   "$(PORT_RD_2R)"     "5 second" "Motor oil level"}
+{MaintInterval	   "h"	   0x0021   1.0    "$(PORT_RD_3000)" INT32_BE   "32"       "Maintenance interval"}
+{MaintTime	   "h"	   0x0023   1.0    "$(PORT_RD_3000)" INT32_BE   "32"       "Next maintenance"}
+{sOpTime           "h"     0x0025   1.0    "$(PORT_RD_3000)" INT32_BE   "32"       "Operation time"}
 }
  
