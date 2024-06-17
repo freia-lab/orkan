@@ -1,7 +1,6 @@
 file "orkan_gen.template" { pattern {}
 {}
 }
-
 file "orkan-ai.template" { pattern
 {S   	           EGU     ADDR	    ASLO    PORT	     MODBUS_DATA	NBITS	   DESC}
 {PT002		   atm	   0x0002   0.01   "$(PORT_RD_1000)" INT32_BE   "32"       "Feed pressure"}
@@ -28,3 +27,36 @@ file "orkan-ai.template" { pattern
 {sOpTime           "h"     0x0025   1.0    "$(PORT_RD_3000)" INT32_BE   "32"       "Operation time"}
 }
  
+file "orkan-longin.template" { pattern
+{S   	           ADDR	    PORT	              DESC}
+{Alarms-0	   0x0000   "$(PORT_RD_STAT_BITS)"    "Alarm word 0x0000"}
+{Alarms-1	   0x0001   "$(PORT_RD_STAT_BITS)"    "Alarm word 0x0001"}
+{Alarms-2	   0x0002   "$(PORT_RD_STAT_BITS)"    "Alarm word 0x0002"}
+{Alarms-3	   0x0003   "$(PORT_RD_STAT_BITS)"    "Alarm word 0x0003"}
+{Alarms-4	   0x0004   "$(PORT_RD_STAT_BITS)"    "Alarm word 0x0004"}
+{Alarms-5	   0x0005   "$(PORT_RD_STAT_BITS)"    "Alarm word 0x0005"}
+{Alarms-6	   0x0006   "$(PORT_RD_STAT_BITS)"    "Alarm word 0x0006"}
+{Alarms-7	   0x0007   "$(PORT_RD_STAT_BITS)"    "Alarm word 0x0007"}
+{Alarms-8	   0x0008   "$(PORT_RD_STAT_BITS)"    "Alarm word 0x0008"}
+{Alarms-9	   0x0009   "$(PORT_RD_STAT_BITS)"    "Alarm word 0x0009"}
+{Alarms-10	   0x000A   "$(PORT_RD_STAT_BITS)"    "Alarm word 0x000A"}
+{Errors-0	   0x0014   "$(PORT_RD_STAT_BITS)"    "Errors word 0x0014"}
+{Errors-1	   0x0015   "$(PORT_RD_STAT_BITS)"    "Errors word 0x0015"}
+{Errors-2	   0x0016   "$(PORT_RD_STAT_BITS)"    "Errors word 0x0016"}
+{Errors-3	   0x0017   "$(PORT_RD_STAT_BITS)"    "Errors word 0x0017"}
+{Errors-4	   0x0018   "$(PORT_RD_STAT_BITS)"    "Errors word 0x0018"}
+{Errors-5	   0x0019   "$(PORT_RD_STAT_BITS)"    "Errors word 0x0019"}
+{Errors-6	   0x001A   "$(PORT_RD_STAT_BITS)"    "Errors word 0x001A"}
+{Errors-7	   0x001B   "$(PORT_RD_STAT_BITS)"    "Errors word 0x001B"}
+{Errors-8	   0x001C   "$(PORT_RD_STAT_BITS)"    "Errors word 0x001C"}
+{Errors-9	   0x001D   "$(PORT_RD_STAT_BITS)"    "Errors word 0x001D"}
+{Status-0	   0x0028   "$(PORT_RD_STAT_BITS)"    "Status word 0x0028"}
+{Status-1	   0x0029   "$(PORT_RD_STAT_BITS)"    "Status word 0x0029"}
+{Status-2	   0x002A   "$(PORT_RD_STAT_BITS)"    "Status word 0x002A"}
+{Status-3	   0x002B   "$(PORT_RD_STAT_BITS)"    "Status word 0x002B"}
+{Status-4          0x002C   "$(PORT_RD_STAT_BITS)"    "Status word 0x002C"}
+{Status-5          0x002D   "$(PORT_RD_STAT_BITS)"    "Status word 0x002D"}
+{Status-6          0x002E   "$(PORT_RD_STAT_BITS)"    "Status word 0x002E"}
+{Status-7          0x002F   "$(PORT_RD_STAT_BITS)"    "Status word 0x002F"}
+}
+

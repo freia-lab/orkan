@@ -94,3 +94,71 @@ record(bi, "$(P)$(D)sAlarm") {
     field(OSV, "MAJOR")
 }
 
+record(calc, "$(P)$(D)sAlarmsSum-raw") {
+    field(SCAN, "1 second")
+    field(INPA, "$(P)$(D)Alarms-0")
+    field(INPB, "$(P)$(D)Alarms-1")
+    field(INPC, "$(P)$(D)Alarms-2")
+    field(INPD, "$(P)$(D)Alarms-3")
+    field(INPE, "$(P)$(D)Alarms-4")
+    field(INPF, "$(P)$(D)Alarms-5")
+    field(INPG, "$(P)$(D)Alarms-6")
+    field(INPH, "$(P)$(D)Alarms-7")
+    field(INPI, "$(P)$(D)Alarms-8")
+    field(INPJ, "$(P)$(D)Alarms-9")
+    field(INPK, "$(P)$(D)Alarms-10")
+    field(CALC, "(A+B+C+D+E+F+G+H+I+J+K)#0?1:0")
+    field(FLNK, "$(P)$(D)sAlarmsSum")
+}
+
+record(bi, "$(P)$(D)sAlarmsSum") {
+    field(INP, "$(P)$(D)sAlarmsSum-raw")
+    field(ZNAM, "OK")
+    field(ONAM, "Fault")
+    field(OSV, "MAJOR")
+}
+
+record(calc, "$(P)$(D)sErrorsSum-raw") {
+    field(SCAN, "1 second")
+    field(INPA, "$(P)$(D)Errors-0")
+    field(INPB, "$(P)$(D)Errors-1")
+    field(INPC, "$(P)$(D)Errors-2")
+    field(INPD, "$(P)$(D)Errors-3")
+    field(INPE, "$(P)$(D)Errors-4")
+    field(INPF, "$(P)$(D)Errors-5")
+    field(INPG, "$(P)$(D)Errors-6")
+    field(INPH, "$(P)$(D)Errors-7")
+    field(INPI, "$(P)$(D)Errors-8")
+    field(INPJ, "$(P)$(D)Errors-9")
+    field(CALC, "(A+B+C+D+E+F+G+H+I+J)#0?1:0")
+    field(FLNK, "$(P)$(D)sErrorsSum")
+}
+
+record(bi, "$(P)$(D)sErrorsSum") {
+    field(INP, "$(P)$(D)sErrorsSum-raw")
+    field(ZNAM, "OK")
+    field(ONAM, "Fault")
+    field(OSV, "MAJOR")
+}
+
+record(calc, "$(P)$(D)sStatusSum-raw") {
+    field(SCAN, "1 second")
+    field(INPA, "$(P)$(D)Status-0")
+    field(INPB, "$(P)$(D)Status-1")
+    field(INPC, "$(P)$(D)Status-2")
+    field(INPD, "$(P)$(D)Status-3")
+    field(INPE, "$(P)$(D)Status-4")
+    field(INPF, "$(P)$(D)Status-5")
+    field(INPG, "$(P)$(D)Status-6")
+    field(INPH, "$(P)$(D)Status-7")
+    field(CALC, "(A+B+C+D+E+F+G+H)#0?1:0")
+    field(FLNK, "$(P)$(D)sStatusSum")
+}
+
+record(bi, "$(P)$(D)sStatusSum") {
+    field(INP, "$(P)$(D)sStatusSum-raw")
+    field(ZNAM, "OK")
+    field(ONAM, "Fault")
+    field(OSV, "MAJOR")
+}
+

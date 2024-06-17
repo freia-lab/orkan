@@ -2,5 +2,5 @@ record (longin, "$(P)$(D)$(S)") {
     field(DESC, "$(DESC)")
     field(DTYP,"asynUInt32Digital")
     field(INP,"@asynMask($(PORT) $(ADDR) 0xFFFF 1500)UINT16")
-    field(SCAN,"$(SCAN)")
+    field(SCAN,"I/O Intr")
 }

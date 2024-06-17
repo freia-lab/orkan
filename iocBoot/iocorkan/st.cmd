@@ -50,7 +50,7 @@ modbusInterposeConfig("$(ASYN_PORT_NAME)",1,5000,100)
 
 drvModbusAsynConfigure(WR_1R, "$(ASYN_PORT_NAME)", 2, 6, -1, 1, "UINT16", 1, "orkan")
 
-drvModbusAsynConfigure(RD_ALARMS, "$(ASYN_PORT_NAME)", 2, 3, 0x0000, 0x2F, "UINT16", 2000, "orkan")
+drvModbusAsynConfigure(RD_STAT_BITS, "$(ASYN_PORT_NAME)", 2, 3, 0x0000, 0x30, "UINT16", 2000, "orkan")
 drvModbusAsynConfigure(RD_1000, "$(ASYN_PORT_NAME)", 2, 3, 0x1000, 22, "UINT16", 2000, "orkan")
 drvModbusAsynConfigure(RD_2000, "$(ASYN_PORT_NAME)", 2, 3, 0x2000, 34, "UINT16", 4000, "orkan")
 drvModbusAsynConfigure(RD_3000, "$(ASYN_PORT_NAME)", 2, 3, 0x3000, 39, "UINT16", 4000, "orkan")
@@ -61,7 +61,7 @@ var(reccastTimeout, 5.0)
 var(reccastMaxHoldoff, 5.0)
 
 ## Load record instances
-dbLoadRecords("db/orkan.db","PORT_RD_1000=RD_1000,PORT_RD_2000=RD_2000,PORT_RD_3000=RD_3000,PORT_RD_4000=RD_4000,PORT_RD_1R=RD_1R,PORT_WR_1R=WR_1R,P=$(PREFIX),D=$(DEV_NAME)")
+dbLoadRecords("db/orkan.db","PORT_RD_1000=RD_1000,PORT_RD_2000=RD_2000,PORT_RD_3000=RD_3000,PORT_RD_4000=RD_4000,PORT_RD_STAT_BITS=RD_STAT_BITS,PORT_RD_1R=RD_1R,PORT_WR_1R=WR_1R,P=$(PREFIX),D=$(DEV_NAME)")
 dbLoadRecords("$(ASYN)/db/asynRecord.db","P=$(IOCNAME),R=:asynRec,PORT='$(ASYN_PORT_NAME)',ADDR='0',IMAX='1024',OMAX='256'")
 dbLoadRecords("$(RECSYNC)/db/reccaster.db","P=$(IOCNAME):RecSync-")
 dbLoadRecords("db/iocAdminSoft-ess.db","IOC=$(IOCNAME)")
