@@ -1,0 +1,7 @@
+record (stringin, "$(P)$(D)$(S)") {
+    field(DESC, "$(DESC)")
+    field(DTYP,"asynOctetRead")
+    field(INP,"@asyn($(PORT) $(ADDR))ZSTRING_HIGH_LOW")
+    field(SCAN,"I/O Intr")
+}
+

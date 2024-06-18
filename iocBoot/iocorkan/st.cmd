@@ -46,16 +46,13 @@ modbusInterposeConfig("$(ASYN_PORT_NAME)",1,5000,100)
 #			 'PLC type'
 #drvModbusAsynConfigure($(ASYN_PORT_NAME)_STATUS, "$(ASYN_PORT_NAME)", 2, 3, 0x247A, 16, "UINT16", 4000, "orkan")
 
-#drvModbusAsynConfigure(RD_1R, "$(ASYN_PORT_NAME)", 2, 3, -1, 1, "UINT16", 4000, "orkan")
-
-drvModbusAsynConfigure(WR_1R, "$(ASYN_PORT_NAME)", 2, 6, -1, 1, "UINT16", 1, "orkan")
+drvModbusAsynConfigure(WR_1R, "$(ASYN_PORT_NAME)", 2, 6, -1, 1, "UINT16", 0, "orkan")
 
 drvModbusAsynConfigure(RD_STAT_BITS, "$(ASYN_PORT_NAME)", 2, 3, 0x0000, 0x30, "UINT16", 2000, "orkan")
 drvModbusAsynConfigure(RD_1000, "$(ASYN_PORT_NAME)", 2, 3, 0x1000, 22, "UINT16", 2000, "orkan")
 drvModbusAsynConfigure(RD_2000, "$(ASYN_PORT_NAME)", 2, 3, 0x2000, 34, "UINT16", 4000, "orkan")
 drvModbusAsynConfigure(RD_3000, "$(ASYN_PORT_NAME)", 2, 3, 0x3000, 39, "UINT16", 4000, "orkan")
 drvModbusAsynConfigure(RD_4000, "$(ASYN_PORT_NAME)", 2, 3, 0x4000, 13, "UINT16", 4000, "orkan")
-drvModbusAsynConfigure(RD_508E, "$(ASYN_PORT_NAME)", 2, 3, 0x4000, 1,  "UINT16", 4000, "orkan")
 
 var(reccastTimeout, 5.0)
 var(reccastMaxHoldoff, 5.0)

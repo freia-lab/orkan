@@ -58,5 +58,17 @@ file "orkan-longin.template" { pattern
 {Status-5          0x002D   "$(PORT_RD_STAT_BITS)"    "Status word 0x002D"}
 {Status-6          0x002E   "$(PORT_RD_STAT_BITS)"    "Status word 0x002E"}
 {Status-7          0x002F   "$(PORT_RD_STAT_BITS)"    "Status word 0x002F"}
+{Time-H		   0x0008   "$(PORT_RD_4000)"         "Time: hour"}
+{Time-M		   0x0009   "$(PORT_RD_4000)"         "Time: minutes"}
+{Date-D		   0x000A   "$(PORT_RD_4000)"         "Date: day"}
+{Date-M		   0x000B   "$(PORT_RD_4000)"         "Date: month"}
+{Date-Y		   0x000C   "$(PORT_RD_4000)"         "Date: year"}
 }
 
+file "orkan-stringin.template" { pattern
+{S                 ADDR     PORT                N      DESC}
+{SerNo             0x0011   "$(PORT_RD_3000)"   20     "Serial number"}
+{CntrlSerNo        0x0001   "$(PORT_RD_3000)"   12     "Controller's serial number"}
+{SoftwareVer       0x0007   "$(PORT_RD_3000)"   20     "Software version"}
+{HardwareVer       0x001B   "$(PORT_RD_3000)"   12     "Hardware version"}
+}

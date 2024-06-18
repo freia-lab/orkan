@@ -70,11 +70,13 @@ record (bi, "$(P)$(D)sRemStart") {
 record (longout, "$(P)$(D)cStart") {
     field(DTYP,"asynInt32")
     field(OUT,"@asynMask($(PORT_WR_1R) 0x400d 0xff 500)UINT16")
+    field(UDFS, "NO_ALARM")
 }
 
 record (longout, "$(P)$(D)cStop") {
     field(DTYP,"asynInt32")
     field(OUT,"@asynMask($(PORT_WR_1R) 0x400e 0xFF500)UINT16")
+    field(UDFS, "NO_ALARM")
 }
 
 
