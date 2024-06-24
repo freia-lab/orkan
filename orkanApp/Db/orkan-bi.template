@@ -1,8 +1,9 @@
 record (bi, "$(P)$(D)$(S)") {
     field(DESC, "$(DESC)")
     field(DTYP,"asynUInt32Digital")
-    field(INP,"@asynMask($(PORT_RD_STAT_BITS) $(ADDR) $(MASK) 1500)UINT16")
+    field(INP,"@asynMask($(PORT) $(ADDR) $(MASK) 1500)UINT16")
     field(ZNAM, "$(ZNAM)")
+    field(ZSV, "$(ZSV)")
     field(ONAM, "$(ONAM)")
     field(OSV, "$(OSV)")
     field(SCAN,"I/O Intr")

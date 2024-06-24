@@ -72,22 +72,24 @@ file "orkan-stringin.template" { pattern
 }
 
 file "orkan-bi.template" { pattern
-{S                 ADDR     MASK     ZNAM     ONAM     OSV       DESC}
-{Alrm-PT100HI	   0x00	    0x0001   "OK"     "FAULT"  "MAJOR"   "Stage 1 pressure too high"}
-{Alrm-PT200HI	   0x00	    0x0004   "OK"     "FAULT"  "MAJOR"   "Stage 2 pressure too high"}
-{Alrm-PT300HI	   0x00	    0x0010   "OK"     "FAULT"  "MAJOR"   "Stage 3 pressure too high"}
-{Alrm-PT400HI	   0x00	    0x0040   "OK"     "FAULT"  "MAJOR"   "Stage 4 pressure too high"}
-{Alrm-PT500HI	   0x00	    0x0100   "OK"     "FAULT"  "MAJOR"   "Stage 5 pressure too high"}
-{Alrm-PT709HI	   0x00	    0x1000   "OK"     "FAULT"  "MAJOR"   "System pressure too high"}
-{Alrm-PT800LO	   0x00	    0x8000   "OK"     "FAULT"  "MAJOR"   "Oil pressure too low"}
-{Alrm-PT800HI	   0x01	    0x0001   "OK"     "FAULT"  "MAJOR"   "Oil pressure too high"}
-{Alrm-PT002LO	   0x01	    0x0004   "OK"     "FAULT"  "MAJOR"   "Feed pressure too low"}
-{Alrm-PT003LO	   0x01	    0x0020   "OK"     "FAULT"  "MAJOR"   "Suction pressure too low"}
-{Alrm-PT003HI	   0x01	    0x0040   "OK"     "FAULT"  "MAJOR"   "Suction pressure too high"}
-{Alrm-TT111HI	   0x01	    0x8000   "OK"     "FAULT"  "MAJOR"   "Temp. b4 stage1 cooler high"}
-{Alrm-TT211HI	   0x03	    0x0008   "OK"     "FAULT"  "MAJOR"   "Temp. b4 stage2 cooler high"}
-{Alrm-TT311HI	   0x03	    0x8000   "OK"     "FAULT"  "MAJOR"   "Temp. b4 stage3 cooler high"}
-{Alrm-TT411HI	   0x04	    0x0080   "OK"     "FAULT"  "MAJOR"   "Temp. b4 stage4 cooler high"}
-{Alrm-TT511HI	   0x04	    0x0800   "OK"     "FAULT"  "MAJOR"   "Temp. b4 stage5 cooler high"}
-{Alrm-TT519HI	   0x05	    0x0008   "OK"     "FAULT"  "MAJOR"   "Gas outlet temperature high"}
+{S                 ADDR     PORT                    MASK     ZNAM     ZSV        ONAM     OSV       DESC}
+{Alrm-PT100HI	   0x00	    "$(PORT_RD_STAT_BITS)"  0x0001   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Stage 1 pressure too high"}
+{Alrm-PT200HI	   0x00	    "$(PORT_RD_STAT_BITS)"  0x0004   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Stage 2 pressure too high"}
+{Alrm-PT300HI	   0x00	    "$(PORT_RD_STAT_BITS)"  0x0010   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Stage 3 pressure too high"}
+{Alrm-PT400HI	   0x00	    "$(PORT_RD_STAT_BITS)"  0x0040   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Stage 4 pressure too high"}
+{Alrm-PT500HI	   0x00	    "$(PORT_RD_STAT_BITS)"  0x0100   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Stage 5 pressure too high"}
+{Alrm-PT709HI	   0x00	    "$(PORT_RD_STAT_BITS)"  0x1000   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "System pressure too high"}
+{Alrm-PT800LO	   0x00	    "$(PORT_RD_STAT_BITS)"  0x8000   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Oil pressure too low"}
+{Alrm-PT800HI	   0x01	    "$(PORT_RD_STAT_BITS)"  0x0001   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Oil pressure too high"}
+{Alrm-PT002LO	   0x01	    "$(PORT_RD_STAT_BITS)"  0x0004   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Feed pressure too low"}
+{Alrm-PT003LO	   0x01	    "$(PORT_RD_STAT_BITS)"  0x0020   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Suction pressure too low"}
+{Alrm-PT003HI	   0x01	    "$(PORT_RD_STAT_BITS)"  0x0040   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Suction pressure too high"}
+{Alrm-TT111HI	   0x01	    "$(PORT_RD_STAT_BITS)"  0x8000   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Temp. b4 stage1 cooler high"}
+{Alrm-TT211HI	   0x03	    "$(PORT_RD_STAT_BITS)"  0x0008   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Temp. b4 stage2 cooler high"}
+{Alrm-TT311HI	   0x03	    "$(PORT_RD_STAT_BITS)"  0x8000   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Temp. b4 stage3 cooler high"}
+{Alrm-TT411HI	   0x04	    "$(PORT_RD_STAT_BITS)"  0x0080   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Temp. b4 stage4 cooler high"}
+{Alrm-TT511HI	   0x04	    "$(PORT_RD_STAT_BITS)"  0x0800   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Temp. b4 stage5 cooler high"}
+{Alrm-TT519HI	   0x05	    "$(PORT_RD_STAT_BITS)"  0x0008   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Gas outlet temperature high"}
+{sOpMode	   0x06	    "$(PORT_RD_4000)"       0x00FF   "Manual" "MAJOR"    "Automatic"  "NO_ALARM"   "Operating mode"}
+{sRemStart         0x07     "$(PORT_RD_4000)"       0x00FF   "Local"  "MAJOR"    "Remote" "NO_ALARM" "Remote control"}
 }

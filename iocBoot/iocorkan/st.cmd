@@ -33,7 +33,7 @@ asynSetOption("$(ASYN_PORT_NAME)",0,"stop", "1")
 #                      timeoutMsec,
 #                      writeDelayMsec)
 
-modbusInterposeConfig("$(ASYN_PORT_NAME)",1,5000,100)
+modbusInterposeConfig("$(ASYN_PORT_NAME)",1,5000,10)
 
 #drvModbusAsynConfigure	 'Port name'
 #			 'Octet port name' 
