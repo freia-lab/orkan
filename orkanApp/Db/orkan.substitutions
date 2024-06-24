@@ -6,22 +6,20 @@ file "orkan-ai.template" { pattern
 {PT002		   bar	   0x0002   0.01   "$(PORT_RD_1000)" INT32_BE   "32"       "Feed pressure"}
 {PT003		   bar	   0x0004   0.01   "$(PORT_RD_1000)" INT32_BE   "32"       "Suction pressure"}
 {PT709		   bar	   0x0006   0.01   "$(PORT_RD_1000)" UINT16     "16"       "System pressure"}
-{PT110		   bar	   0x0007   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 1 pressure"}
-{PT210		   bar	   0x0008   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 2 pressure"}
-{PT310		   bar	   0x0009   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 3 pressure"}
-{PT410		   bar	   0x000A   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 4 pressure"}
-{PT510		   bar	   0x000B   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 5 pressure"}
+{PT100		   bar	   0x0007   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 1 pressure"}
+{PT200		   bar	   0x0008   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 2 pressure"}
+{PT300		   bar	   0x0009   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 3 pressure"}
+{PT400		   bar	   0x000A   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 4 pressure"}
+{PT500		   bar	   0x000B   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Stage 5 pressure"}
 {PT800		   bar	   0x000D   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Oil pressure"}
 {MTR-I		   "A"	   0x0015   0.01   "$(PORT_RD_1000)" UINT16     "16"       "Motor current"}
 {TT519		   "°C"	   0x0001   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Outlet temperature"}
-{MTR-OilT	   "°C"	   0x0002   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Motor oil temperature"}
+{TT810	   "°C"	   0x0002   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Oil temperature"}
 {TT111		   "°C"	   0x000A   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Temp. b4 stage1 cooler"}
 {TT211		   "°C"	   0x0014   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Temp. b4 stage2 cooler"}
 {TT311		   "°C"	   0x001A   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Temp. b4 stage3 cooler"}
 {TT411		   "°C"	   0x001E   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Temp. b4 stage4 cooler"}
 {TT511		   "°C"	   0x0020   0.01   "$(PORT_RD_2000)" UINT16     "16"       "Temp. b4 stage5 cooler"}
-#{MTR-Freq	   "Hz"	   0x0000   0.01   "$(PORT_RD_508E)" UINT16     "16"       "Motor frequency"}
-#{MTR-OilLvl	   "?"	   0x1823   0.01   "$(PORT_RD_2R)"     "5 second" "Motor oil level"}
 {MaintInterval	   "h"	   0x0021   1.0    "$(PORT_RD_3000)" INT32_BE   "32"       "Maintenance interval"}
 {MaintTime	   "h"	   0x0023   1.0    "$(PORT_RD_3000)" INT32_BE   "32"       "Next maintenance"}
 {sOpTime           "h"     0x0025   1.0    "$(PORT_RD_3000)" INT32_BE   "32"       "Operation time"}
@@ -75,11 +73,11 @@ file "orkan-stringin.template" { pattern
 
 file "orkan-bi.template" { pattern
 {S                 ADDR     MASK     ZNAM     ONAM     OSV       DESC}
-{Alrm-PT110HI	   0x00	    0x0001   "OK"     "FAULT"  "MAJOR"   "Stage 1 pressure too high"}
-{Alrm-PT210HI	   0x00	    0x0004   "OK"     "FAULT"  "MAJOR"   "Stage 2 pressure too high"}
-{Alrm-PT310HI	   0x00	    0x0010   "OK"     "FAULT"  "MAJOR"   "Stage 3 pressure too high"}
-{Alrm-PT410HI	   0x00	    0x0040   "OK"     "FAULT"  "MAJOR"   "Stage 4 pressure too high"}
-{Alrm-PT510HI	   0x00	    0x0100   "OK"     "FAULT"  "MAJOR"   "Stage 5 pressure too high"}
+{Alrm-PT100HI	   0x00	    0x0001   "OK"     "FAULT"  "MAJOR"   "Stage 1 pressure too high"}
+{Alrm-PT200HI	   0x00	    0x0004   "OK"     "FAULT"  "MAJOR"   "Stage 2 pressure too high"}
+{Alrm-PT300HI	   0x00	    0x0010   "OK"     "FAULT"  "MAJOR"   "Stage 3 pressure too high"}
+{Alrm-PT400HI	   0x00	    0x0040   "OK"     "FAULT"  "MAJOR"   "Stage 4 pressure too high"}
+{Alrm-PT500HI	   0x00	    0x0100   "OK"     "FAULT"  "MAJOR"   "Stage 5 pressure too high"}
 {Alrm-PT709HI	   0x00	    0x1000   "OK"     "FAULT"  "MAJOR"   "System pressure too high"}
 {Alrm-PT800LO	   0x00	    0x8000   "OK"     "FAULT"  "MAJOR"   "Oil pressure too low"}
 {Alrm-PT800HI	   0x01	    0x0001   "OK"     "FAULT"  "MAJOR"   "Oil pressure too high"}
