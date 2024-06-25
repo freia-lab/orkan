@@ -90,6 +90,32 @@ file "orkan-bi.template" { pattern
 {Alrm-TT411HI	   0x04	    "$(PORT_RD_STAT_BITS)"  0x0080   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Temp. b4 stage4 cooler high"}
 {Alrm-TT511HI	   0x04	    "$(PORT_RD_STAT_BITS)"  0x0800   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Temp. b4 stage5 cooler high"}
 {Alrm-TT519HI	   0x05	    "$(PORT_RD_STAT_BITS)"  0x0008   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Gas outlet temperature high"}
+{Alrm-TT810LO	   0x05	    "$(PORT_RD_STAT_BITS)"  0x0080   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Oil temperature low"}
+{Alrm-TT810HI	   0x05	    "$(PORT_RD_STAT_BITS)"  0x0100   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Oil temperature high"}
+{Alrm-EmrgStop     0x07     "$(PORT_RD_STAT_BITS)"  0x0100   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Emergency stop"}
+{Alrm-MtrOvl       0x08     "$(PORT_RD_STAT_BITS)"  0x4000   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Motor overload"}
+{Alrm-Maintenance  0x09     "$(PORT_RD_STAT_BITS)"  0x0020   "OK"     "NO_ALARM" "FAULT"  "MAJOR"   "Maintenance is due"}
+{Err-PT100HI      0x14     "$(PORT_RD_STAT_BITS)"  0x0001   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Stage 1 pressure too high"}
+{Err-PT200HI      0x14     "$(PORT_RD_STAT_BITS)"  0x0004   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Stage 2 pressure too high"}
+{Err-PT300HI      0x14     "$(PORT_RD_STAT_BITS)"  0x0010   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Stage 3 pressure too high"}
+{Err-PT400HI      0x14     "$(PORT_RD_STAT_BITS)"  0x0040   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Stage 4 pressure too high"}
+{Err-PT500HI      0x14     "$(PORT_RD_STAT_BITS)"  0x0100   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Stage 5 pressure too high"}
+{Err-PT709HI      0x14     "$(PORT_RD_STAT_BITS)"  0x1000   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "System pressure too high"}
+{Err-PT800LO      0x14     "$(PORT_RD_STAT_BITS)"  0x8000   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Oil pressure too low"}
+{Err-PT800HI      0x15     "$(PORT_RD_STAT_BITS)"  0x0001   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Oil pressure too high"}
+{Err-PT002LO      0x15     "$(PORT_RD_STAT_BITS)"  0x0004   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Feed pressure too low"}
+{Err-PT003LO      0x15     "$(PORT_RD_STAT_BITS)"  0x0020   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Suction pressure too low"}
+{Err-PT003HI      0x15     "$(PORT_RD_STAT_BITS)"  0x0040   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Suction pressure too high"}
+{Err-TT111HI      0x15     "$(PORT_RD_STAT_BITS)"  0x8000   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Temp. b4 stage1 cooler high"}
+{Err-TT211HI      0x17     "$(PORT_RD_STAT_BITS)"  0x0008   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Temp. b4 stage2 cooler high"}
+{Err-TT311HI      0x17     "$(PORT_RD_STAT_BITS)"  0x8000   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Temp. b4 stage3 cooler high"}
+{Err-TT411HI      0x18     "$(PORT_RD_STAT_BITS)"  0x0080   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Temp. b4 stage4 cooler high"}
+{Err-TT511HI      0x18     "$(PORT_RD_STAT_BITS)"  0x0800   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Temp. b4 stage5 cooler high"}
+{Err-TT519HI      0x19     "$(PORT_RD_STAT_BITS)"  0x0008   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Gas outlet temperature high"}
+{Err-TT810LO      0x19     "$(PORT_RD_STAT_BITS)"  0x0080   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Oil temperature low"}
+{Err-TT810HI      0x19     "$(PORT_RD_STAT_BITS)"  0x0100   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Oil temperature high"}
+{Err-EmrgStop     0x1B     "$(PORT_RD_STAT_BITS)"  0x0100   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Emergency stop"}
+{Err-MtrOvl       0x1C     "$(PORT_RD_STAT_BITS)"  0x4000   "OK"     "NO_ALARM" "FAULT"  "MINOR"   "Motor overload"}
 {sOpMode	   0x06	    "$(PORT_RD_4000)"       0x00FF   "Manual" "MAJOR"    "Automatic"  "NO_ALARM"   "Operating mode"}
 {sRemStart         0x07     "$(PORT_RD_4000)"       0x00FF   "Local"  "MAJOR"    "Remote" "NO_ALARM" "Remote control"}
 }

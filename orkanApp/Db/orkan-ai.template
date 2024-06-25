@@ -3,6 +3,7 @@ record (ai, "$(P)$(D)$(S)") {
     field(DTYP,"asynInt32")
     field(INP,"@asynMask($(PORT) $(ADDR) $(NBITS) 1500)$(MODBUS_DATA)")
     field(ASLO, "$(ASLO=0.01)")
+    field(ADEL, "0.02")
     field(PREC, "2")
     field(EGU, "$(EGU)")
     field(SCAN,"I/O Intr")
