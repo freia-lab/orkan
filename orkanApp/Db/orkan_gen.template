@@ -159,7 +159,7 @@ record(calc, "$(P)$(D)sAlive") {
    field(DESC, "Live data OK")
    field(SCAN, "60 second")
    field(INPA, "$(P)$(D)$(S)")
-   field(INPB, "$(P)$(D):sAlive.LA")
+   field(INPB, "$(P)$(D)sAlive.LA")
    field(CALC, "((A-B)>0)?1:0")
    field(LOW, "0.5")
    field(PINI, "YES")
