@@ -1,6 +1,8 @@
-file "orkan_gen.template" { pattern {}
-{}
+file "orkan_gen.template" { pattern
+{S}
+{PT709}
 }
+
 file "orkan-ai.template" { pattern
 {S   	           EGU     ADDR	    ASLO    PORT	     MODBUS_DATA	NBITS	   DESC}
 {PT002		   bar	   0x0002   0.01   "$(PORT_RD_1000)" INT32_BE   "32"       "Feed pressure"}

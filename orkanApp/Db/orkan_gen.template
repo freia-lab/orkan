@@ -146,3 +146,22 @@ record(bi, "$(P)$(D)sStatusSum") {
     field(OSV, "MAJOR")
 }
 
+##################################################
+#
+# Help records
+
+# A help record to check if data read from Modbus
+# via Modbus gateway updates ok. This record is to be used
+# for reporting an error when the Modbus data is read
+# without any error but it's the old data, not the current one
+#
+record(calc, "$(P)$(D)sAlive") {
+   field(DESC, "Live data OK")
+   field(SCAN, "60 second")
+   field(INPA, "$(P)$(D)$(S)")
+   field(INPB, "$(P)$(D):sAlive.LA")
+   field(CALC, "((A-B)>0)?1:0")
+   field(LOW, "0.5")
+   field(PINI, "YES")
+   field(LSV, "MAJOR")
+}
