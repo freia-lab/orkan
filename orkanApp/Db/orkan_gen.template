@@ -165,7 +165,7 @@ record(calc, "$(P)$(D)sAlive") {
    field(INPE, "$(P)$(D)sAlive.LD")
    field(INPF, "$(P)$(D)sAlive.LE")
    field(INPG, "$(P)$(D)sAlive.LF")
-   field(CAL, "((A=B&&A=C&&A=D&&A=E&&A=F&&A=G)?0:1")
+   field(CALC, "(A=B&&A=C&&A=D&&A=E&&A=F&&A=G)?0:1")
    field(LOW, "0.5")
    field(PINI, "YES")
    field(LSV, "MAJOR")
